@@ -8,6 +8,9 @@ This repository documents my implementation of Pi-hole on a Raspberry Pi 5 runni
 
 ## System Specifications
 
+![Raspberry Pi 5 Hardware](physical%20pi5.png)
+*My Raspberry Pi 5 setup*
+
 - **Hardware**: Raspberry Pi 5 (4GB RAM)
 - **Storage**: 64GB microSD card
 - **Operating System**: Ubuntu 24.04 LTS (64-bit)
@@ -18,7 +21,6 @@ This repository documents my implementation of Pi-hole on a Raspberry Pi 5 runni
 
 ### 1. Update System
 ```yaml
-bash
 sudo apt update && sudo apt upgrade -y
 sudo apt install curl -y
 ```
@@ -37,6 +39,10 @@ curl -sSL https://install.pi-hole.net | bash
 - Admin web interface: Enabled
 - Web server: Enabled
 - Query logging: Enabled
+
+![Raspberry Pi 5 Hardware](pihole-dashboard.png)
+
+Pi-hole admin interface showing statistics and status
 
 ### 4. Post-Installation
 
@@ -112,6 +118,9 @@ This configuration allows Pi-hole to assign IP addresses to devices and automati
 
 I verified system health with the following metrics:
 
+![System Health Statistics](system%20data.JPG)
+*Terminal output showing system load, memory usage, and other health metrics*
+
 - Load average: ~1.43-1.68 (higher due to desktop environment)
 - Memory usage: ~2GB/4GB RAM used
 - Disk space: 47GB free (17% used)
@@ -155,6 +164,10 @@ sudo udevadm control --reload-rules && sudo udevadm trigger
 **Solution:**
 
 - Checked Pi-hole's Query Log to identify blocked domains
+
+![Pi-hole Query Log](query-log-1.JPG)
+*Sample of Pi-hole query log showing blocked and allowed DNS requests*
+
 - Whitelisted essential domains while maintaining ad-blocking for other sites
 - Used the following commands to whitelist domains:
 ```yaml
