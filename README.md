@@ -87,24 +87,7 @@ sudo systemctl disable NetworkManager
 sudo rm /etc/netplan/90-NM-*.yaml
 ```
 
-
-### 2. Pi-hole Installation
-
-I installed Pi-hole using the official installation script:
-```yaml
-sudo apt update && sudo apt install curl -y
-curl -sSL https://install.pi-hole.net | bash
-```
-
-Configuration selections:
-
-- Interface: eth0 (Ethernet)
-- Upstream DNS: Cloudflare (1.1.1.1)
-- Blocklists: Default lists + StevenBlack's hosts
-- Web interface: Enabled
-- Admin password: Secured with a strong password
-
-### 3. DHCP Configuration
+### 2. DHCP Configuration
 
 I disabled the DHCP server on the AT&T router to avoid conflicts, then enabled Pi-hole's DHCP server:
 
@@ -114,7 +97,7 @@ I disabled the DHCP server on the AT&T router to avoid conflicts, then enabled P
 
 This configuration allows Pi-hole to assign IP addresses to devices and automatically set them to use Pi-hole for DNS resolution.
 
-### 4. System Monitoring & Optimization
+### 3. System Monitoring & Optimization
 
 I verified system health with the following metrics:
 
