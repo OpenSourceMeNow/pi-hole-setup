@@ -159,7 +159,7 @@ pihole -w cdn.example-streaming-domain.com
 
 ### 4. Pi-hole Not Filtering Locally
 
-**Challenge**: Commands on the Pi itself bypassed Pi-hole filtering.
+**Challenge**: Local commands on the Pi bypassed Pi-hole’s DNS filtering.
 
 **Solution:**
 
@@ -201,7 +201,7 @@ Potential enhancements for this setup include:
 - Migrating to a lighter OS (Ubuntu Server or Raspberry Pi OS Lite) for better resource efficiency
 - Implementing automated backups of Pi-hole configuration
 - Fine-tuning blocklists for optimal performance and minimal false positives
-- Setting up Pi-hole redundancy with a secondary DNS server
+- Adding Pi-hole redundancy using a secondary instance
 
 ## Resources
 
