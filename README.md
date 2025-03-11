@@ -8,7 +8,7 @@ This repository documents my implementation of Pi-hole on a Raspberry Pi 5 runni
 
 ## System Specifications
 
-![Raspberry Pi 5 Hardware](physical%20pi5.png)
+![Raspberry Pi 5 Hardware](images/physical%20pi5.png)
 *My Raspberry Pi 5 setup*
 
 - **Hardware**: Raspberry Pi 5 (4GB RAM)
@@ -40,7 +40,7 @@ curl -sSL https://install.pi-hole.net | bash
 - Web server: Enabled
 - Query logging: Enabled
 
-![Raspberry Pi 5 Hardware](pihole-dashboard.png)
+![Pi-hole Dashboard](images/pihole-dashboard.png)
 
 Pi-hole admin interface showing statistics and status
 
@@ -118,9 +118,6 @@ This configuration allows Pi-hole to assign IP addresses to devices and automati
 
 I verified system health with the following metrics:
 
-![System Health Statistics](system%20data.JPG)
-*Terminal output showing system load, memory usage, and other health metrics*
-
 - Load average: ~1.43-1.68 (higher due to desktop environment)
 - Memory usage: ~2GB/4GB RAM used
 - Disk space: 47GB free (17% used)
@@ -134,6 +131,8 @@ sudo chmod 666 /dev/vcio
 echo 'KERNEL=="vcio", MODE="0666"' | sudo tee /etc/udev/rules.d/99-vcio.rules
 sudo udevadm control --reload-rules && sudo udevadm trigger
 ```
+![System Health Statistics](images/system%20data.JPG)
+*Terminal output showing system load, memory usage, and other health metrics*
 
 ## Troubleshooting Challenges & Solutions
 
@@ -165,7 +164,7 @@ sudo udevadm control --reload-rules && sudo udevadm trigger
 
 - Checked Pi-hole's Query Log to identify blocked domains
 
-![Pi-hole Query Log](query-log-1.JPG)
+![Pi-hole Query Log](images/query-log-1.JPG)
 *Sample of Pi-hole query log showing blocked and allowed DNS requests*
 
 - Whitelisted essential domains while maintaining ad-blocking for other sites
